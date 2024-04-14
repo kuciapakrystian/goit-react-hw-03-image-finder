@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-
 export const Wraper = styled.div`
   display: flex;
   justify-content: center;
@@ -16,7 +15,6 @@ export const Text = styled.p`
   font-family: 500;
   font-size: 22px;
 `;
-
 export const Img = styled.img`
   width: 25vw;
   height: auto;

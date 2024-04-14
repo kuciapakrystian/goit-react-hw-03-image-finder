@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-
 export const Header = styled.header`
   top: 0;
   left: 0;
@@ -43,7 +42,6 @@ export const Button = styled.button`
     opacity: 1;
   }
 `;
-
 export const Input = styled.input`
   display: inline-block;
   width: 100%;

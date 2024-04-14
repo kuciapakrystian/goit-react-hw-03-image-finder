@@ -1,5 +1,4 @@
 @import-normalize; /* bring in normalize.css styles */
-
 body {
   margin: 0 auto;
   font-size: 14px;
@@ -11,12 +10,10 @@ body {
   background-size: 100%;
   background-attachment: fixed;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 h1,
 h2,
 h3,

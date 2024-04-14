@@ -28,7 +28,6 @@ export const BtnLoadMore = styled.button`
   background-image: linear-gradient(90deg, #1c1c1c, #6220fb);
   border: 0 solid;
   overflow: hidden;
-
   :hover,
   :focus {
     cursor: pointer;
