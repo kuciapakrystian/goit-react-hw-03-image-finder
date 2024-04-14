@@ -28,12 +28,12 @@ export class App extends Component {
       this.setState({ page: 1, images: [] });
     }
 
-    // Перевіряємо, чи змінились пропси запиту або state сторінки (page)
+    
     if (prevSearchValue !== nextSearchValue || prevState.page !== page) {
-      // запуск спінера
+      
       this.setState({ loading: true, error: null });
 
-      //  запит на бекенд
+      
       try {
         const response = await imgApi(nextSearchValue, page);
         const { hits, totalHits } = response.data;
@@ -49,22 +49,22 @@ export class App extends Component {
     }
   }
 
-  //  запит пошуку в App з Searchbar
+  
   handleSubmit = searchValue => {
     this.setState({ textQuery: searchValue, page: 1 });
   };
 
-  // кнопка завантаження наступних фото
+  
   onLoadMore = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }));
   };
 
-  //модалка відкрити
+  
   onOpenModal = (imgUrl, tag) => {
     this.setState({ showModal: true, imgUrl, tag });
   };
 
-  //модалка закрити
+  
   onCloseModal = () => {
     this.setState({ showModal: false });
   };
@@ -78,23 +78,23 @@ export class App extends Component {
 
         <ImageGallery images={images} openModal={this.onOpenModal} />
 
-        {/* модалка  */}
+        
         {showModal && (
           <Modal onClose={this.onCloseModal}>
             <img src={imgUrl} alt={tag} />
           </Modal>
         )}
 
-        {/* спінер */}
+        
         <Loader isLoading={loading} />
 
-        {/* кнопка завантажити ще */}
+        
         {totalPage / 12 > page && <Button loadMore={this.onLoadMore} />}
 
-        {/* нічого не знайшло */}
+        
         {totalPage === 0 && <ImageErrorView />}
 
-        {/* помилка запиту */}
+        
         {error && <ImageErrorView>{error}</ImageErrorView>}
       </>
     );
